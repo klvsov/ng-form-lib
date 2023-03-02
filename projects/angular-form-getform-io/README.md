@@ -48,7 +48,7 @@ imports: [AngularFormGetformIoModule]
 - `btnLabel`: `string`
 - `successCallback`: `() => void`
 
-### Parameters example
+### 'Field' parameter examples
 
 ```sh
  type: 'text',
