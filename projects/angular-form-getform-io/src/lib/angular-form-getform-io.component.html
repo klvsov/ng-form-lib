@@ -1,0 +1,22 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form" [class]="formClassName">
+    <div *ngFor="let item of fields">
+      <lib-input
+        [inputId]="item.name"
+        [placeholder]="item.placeholder ? item.placeholder : item.label"
+        [label]="item.label"
+        [type]="item.type || 'text'"
+        [isSubmitted]="isFormSubmitted"
+        [multiRows]="item.isMultiLine || false"
+        [isSubmitted]="isFormSubmitted"
+        [control]="form.controls[item.name]"
+        [errorMessages]="errorMessages[item.name]"
+      ></lib-input>
+    </div>
+    <lib-button
+      [btnLabel]="btnLabel"
+      [disabled]="isLoading"
+      [className]="btnClassName"
+    ></lib-button>
+  </form>
+</div>
