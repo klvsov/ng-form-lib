@@ -46,7 +46,7 @@ imports: [AngularFormGetformIoModule]
 ```
 
 - `btnLabel`: `string`
-- `success callback`: `() => void`
+- `successCallback`: `() => void`
 
 ### Parameters example
 
