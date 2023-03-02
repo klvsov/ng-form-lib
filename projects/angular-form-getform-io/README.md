@@ -1,24 +1,88 @@
 # AngularFormGetformIo
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+### To use the form in the component
 
-## Code scaffolding
+- import Form component
 
-Run `ng generate component component-name --project angular-form-getform-io` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular-form-getform-io`.
-> Note: Don't forget to add `--project angular-form-getform-io` or else it will be added to the default project in your `angular.json` file. 
+```sh
+import { AngularFormGetformIoModule } from 'angular-form-getform-io';
+```
 
-## Build
+- add imported module to imports in main component
 
-Run `ng build angular-form-getform-io` to build the project. The build artifacts will be stored in the `dist/` directory.
+```sh
+imports: [AngularFormGetformIoModule]
+```
 
-## Publishing
+- use component in template
 
-After building your library with `ng build angular-form-getform-io`, go to the dist folder `cd dist/angular-form-getform-io` and run `npm publish`.
+```sh
+<lib-angular-form-getform-io></lib-angular-form-getform-io>
+```
 
-## Running unit tests
+### Form accepts parameters
 
-Run `ng test angular-form-getform-io` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- required `[targetUrl]` (the url of your form on getform)
+- required `[fields]` (list of fields that must be in the form)
+- optional `[btnLabel]` - label on the button (default "Send form")
+- optional `[successCallback]` - function that will be called after successful submission of the form data on getform.io
 
-## Further help
+### Parameters types
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- `targetUrl`: `string`
+- `fields`: `array`
+
+```sh
+    name: string
+    type?: string (default 'text')
+    label?: string
+    placeholder?: string (default equal 'label')
+    isMultiLine?: boolean (if true, will be rendered '<textarea></textarea>', otherwise a '<input />')
+    validations?: {
+        errorMessage: string
+        type: string (allowed 'required' | 'email' | 'minLength' | 'maxLength' | 'min' | 'max' | 'pattern')
+        value: string | number | boolean
+    }[]
+```
+
+- `btnLabel`: `string`
+- `success callback`: `() => void`
+
+### Parameters example
+
+```sh
+ type: 'text',
+ name: 'name',
+ label: 'Your first name',
+ validations: [
+   {
+        type: 'required',
+        value: true,
+        errorMessage: 'Required field',
+    },
+    {
+        type: 'minLength',
+        value: 2,
+        errorMessage: 'At least 2 characters',
+    },
+    {
+        type: 'pattern',
+        value: '[a-zA-Z]+',
+        errorMessage: 'Only letters',
+    },
+],
+```
+
+```sh
+type: 'number',
+name: 'age',
+label: 'Your age',
+placeholder: 'Age'
+validations: [
+    {
+        type: 'min',
+        value: 18,
+        errorMessage: 'The minimum age is not reached',
+    },
+]
+```
