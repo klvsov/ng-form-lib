@@ -33,6 +33,7 @@ imports: [AngularFormGetformIoModule]
 - `fields`: `array`
 
 ```sh
+  {
     name: string
     type?: string (default 'text')
     label?: string
@@ -43,6 +44,7 @@ imports: [AngularFormGetformIoModule]
         type: string (allowed 'required' | 'email' | 'minLength' | 'maxLength' | 'min' | 'max' | 'pattern')
         value: string | number | boolean
     }[]
+  }
 ```
 
 - `btnLabel`: `string`

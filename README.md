@@ -51,26 +51,18 @@ imports: [AngularFormGetformIoModule]
 ### 'fields' parameter examples
 
 ```sh
- type: 'text',
- name: 'name',
- label: 'Your first name',
- validations: [
-   {
-        type: 'required',
-        value: true,
-        errorMessage: 'Required field',
-    },
-    {
-        type: 'minLength',
-        value: 2,
-        errorMessage: 'At least 2 characters',
-    },
-    {
-        type: 'pattern',
-        value: '[a-zA-Z]+',
-        errorMessage: 'Only letters',
-    },
-],
+  {
+    name: string
+    type?: string (default 'text')
+    label?: string
+    placeholder?: string (default equal 'label')
+    isMultiLine?: boolean (if true, will be rendered '<textarea></textarea>', otherwise a '<input />')
+    validations?: {
+        errorMessage: string
+        type: string (allowed 'required' | 'email' | 'minLength' | 'maxLength' | 'min' | 'max' | 'pattern')
+        value: string | number | boolean
+    }[]
+  }
 ```
 
 ```sh
