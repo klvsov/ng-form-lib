@@ -16,6 +16,19 @@
     &:hover {
       & + div > input {
         border: 1px solid transparent;
+
+        &:hover {
+          border: 1px solid #d5dcda;
+        }
+
+        &:focus {
+          border: 1px solid #060811;
+          border-radius: 14px;
+        }
+
+        &.isInvalid {
+          border-color: #f27c74;
+        }
       }
     }
   }

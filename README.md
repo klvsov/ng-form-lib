@@ -1,23 +1,31 @@
 # AngularFormGetformIo
 
+### To install package
+
+```sh
+yarn add @halo-lab/ng-getform-io
+or
+npm install @halo-lab/ng-getform-io
+```
+
 ### To use the form in the component
 
 - import Form component
 
 ```sh
-import { AngularFormGetformIoModule } from 'angular-form-getform-io';
+import { NgGetformIoModule } from '@halo-lab/ng-getform-io';
 ```
 
 - add imported module to imports in main component
 
 ```sh
-imports: [AngularFormGetformIoModule]
+imports: [NgGetformIoModule]
 ```
 
 - use component in template
 
 ```sh
-<lib-angular-form-getform-io></lib-angular-form-getform-io>
+<lib-ng-getform-io></lib-ng-getform-io>
 ```
 
 ### Form accepts parameters
@@ -78,3 +86,15 @@ validations: [
     },
 ]
 ```
+
+## Word from author
+
+Have fun ✌️
+
+<a href="https://www.halo-lab.com/?utm_source=github">
+  <img
+    src="https://dgestran.sirv.com/Images/supported-by-halolab.png"
+    alt="Supported by Halo lab"
+    height="60"
+  >
+</a>

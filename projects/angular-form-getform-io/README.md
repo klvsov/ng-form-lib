@@ -1,23 +1,31 @@
 # AngularFormGetformIo
 
+### To install package
+
+```sh
+yarn add @halo-lab/ng-getform-io
+or
+npm install @halo-lab/ng-getform-io
+```
+
 ### To use the form in the component
 
 - import Form component
 
 ```sh
-import { AngularFormGetformIoModule } from 'angular-form-getform-io';
+import { NgGetformIoModule } from '@halo-lab/ng-getform-io';
 ```
 
 - add imported module to imports in main component
 
 ```sh
-imports: [AngularFormGetformIoModule]
+imports: [NgGetformIoModule]
 ```
 
 - use component in template
 
 ```sh
-<lib-angular-form-getform-io></lib-angular-form-getform-io>
+<lib-ng-getform-io></lib-ng-getform-io>
 ```
 
 ### Form accepts parameters
@@ -31,6 +39,24 @@ imports: [AngularFormGetformIoModule]
 
 - `targetUrl`: `string`
 - `fields`: `array`
+
+```sh
+    name: string
+    type?: string (default 'text')
+    label?: string
+    placeholder?: string (default equal 'label')
+    isMultiLine?: boolean (if true, will be rendered '<textarea></textarea>', otherwise a '<input />')
+    validations?: {
+        errorMessage: string
+        type: string (allowed 'required' | 'email' | 'minLength' | 'maxLength' | 'min' | 'max' | 'pattern')
+        value: string | number | boolean
+    }[]
+```
+
+- `btnLabel`: `string`
+- `successCallback`: `() => void`
+
+### 'fields' parameter examples
 
 ```sh
   {
@@ -47,34 +73,6 @@ imports: [AngularFormGetformIoModule]
   }
 ```
 
-- `btnLabel`: `string`
-- `successCallback`: `() => void`
-
-### 'fields' parameter examples
-
-```sh
- type: 'text',
- name: 'name',
- label: 'Your first name',
- validations: [
-   {
-        type: 'required',
-        value: true,
-        errorMessage: 'Required field',
-    },
-    {
-        type: 'minLength',
-        value: 2,
-        errorMessage: 'At least 2 characters',
-    },
-    {
-        type: 'pattern',
-        value: '[a-zA-Z]+',
-        errorMessage: 'Only letters',
-    },
-],
-```
-
 ```sh
 type: 'number',
 name: 'age',
@@ -88,3 +86,15 @@ validations: [
     },
 ]
 ```
+
+## Word from author
+
+Have fun ✌️
+
+<a href="https://www.halo-lab.com/?utm_source=github">
+  <img
+    src="https://dgestran.sirv.com/Images/supported-by-halolab.png"
+    alt="Supported by Halo lab"
+    height="60"
+  >
+</a>
